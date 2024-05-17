@@ -23,7 +23,7 @@
                 <td>{{ book.publicationDate ? book.publicationDate|date('Y-m-d') : '' }}</td>
                 <td>{{ book.isbn }}</td>
                 <td>
-                    <a href="{{ path('book_show', {'id': book.id}) }}">show</a>
+                    <a href="{{ path('book_detail', {'id': book.id}) }}">show</a>
                 </td>
             </tr>
         {% endfor %}
