@@ -33,8 +33,8 @@ class Book
     private ?\DateTimeImmutable $updated_at = null;
 
     #[ORM\ManyToOne(inversedBy: 'books')]
-    #[ORM\JoinColumn(nullable: false)]
-    private ?user $added_by = null;
+    #[ORM\JoinColumn(nullable: true)]
+    private ?User $added_by = null;
 
     public function getId(): ?int
     {
