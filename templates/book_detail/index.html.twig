@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if book %}
+        <h1>{{ book.title }}</h1>
+
+        <table>
+            <tbody>
+            <tr>
+                <th>Title</th>
+                <td>{{ book.title }}</td>
+            </tr>
+            <tr>
+                <th>Author</th>
+                <td>{{ book.author }}</td>
+            </tr>
+            <tr>
+                <th>Publication Date</th>
+                <td>{{ book.publicationDate ? book.publicationDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ISBN</th>
+                <td>{{ book.isbn }}</td>
+            </tr>
+            <tr>
+                <th>Added At</th>
+                <td>{{ book.addedAt ? book.addedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Updated At</th>
+                <td>{{ book.updatedAt ? book.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Added By</th>
+                <td>{{ book.addedBy.email }}</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('book_index') }}">back to list</a>
+    {% else %}
+        <p>The book does not exist.</p>
+        <a href="{{ path('book_index') }}">back to list</a>
+    {% endif %}
+{% endblock %}
