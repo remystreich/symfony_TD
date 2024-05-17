@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AddBookController!{% endblock %}
+
+{% block body %}
+    <h1>Add New Book</h1>
+
+    {{ form_start(bookForm) }}
+    {{ form_widget(bookForm) }}
+    <button class="btn">Add Book</button>
+    {{ form_end(bookForm) }}
+
+    <a href="{{ path('book_index') }}">Back to list</a>
+{% endblock %}
