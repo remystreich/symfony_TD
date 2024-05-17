@@ -1,11 +1,21 @@
+{# templates/add_book/index.html.twig #}
+
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello AddBookController!{% endblock %}
+{% block title %}Add New Book{% endblock %}
 
 {% block body %}
     <h1>Add New Book</h1>
 
-    {{ form_start(bookForm) }}
+    {% if error %}
+        <div >
+            {{ error }}
+        </div>
+    {% endif %}
+
+
+
+    {{ form_start(bookForm, {'attr': {'data-turbo': 'false'}}) }}
     {{ form_widget(bookForm) }}
     <button class="btn">Add Book</button>
     {{ form_end(bookForm) }}
