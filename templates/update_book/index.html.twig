@@ -1,0 +1,24 @@
+{# templates/book/edit.html.twig #}
+
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Book{% endblock %}
+
+{% block body %}
+    <h1>Edit Book</h1>
+
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="alert alert-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    {{ form_start(bookForm) }}
+    {{ form_widget(bookForm) }}
+    <button class="btn btn-primary">Update Book</button>
+    {{ form_end(bookForm) }}
+
+    <a href="{{ path('book_index') }}">Back to list</a>
+{% endblock %}

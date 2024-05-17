@@ -52,7 +52,7 @@ class AddBookController extends AbstractController
 
             return $this->redirectToRoute('book_index');
         }
-        
+
 
         return $this->render('add_book/index.html.twig', [
             'bookForm' => $form->createView(),
